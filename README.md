@@ -7,6 +7,7 @@ Features:
 - Ace Code code editor for making trading strategies
 - Competitive rang lists for certain strategies over a different stocks available to all users
 - Different administration roles and ranks
+- Microservice for running uploaded strategies
 
 # Phases
 
