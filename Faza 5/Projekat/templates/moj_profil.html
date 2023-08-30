@@ -1,0 +1,116 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground - Moj Profil</title>
+{% endblock %}
+{% block content %}
+    <div class="text-center justify-content-center" style="margin:auto; width: 80%">
+        <h2 class="form-title">Moj profil</h2>
+        {% load static %}
+        <img src="{% static 'StrategyPlayground/korisnik.webp' %}" alt="user picture" width=30%>
+        <form method="POST" class="login-form"  action="{% url 'updateinformations' %}">
+            {%  csrf_token %}
+            <table class="table" style="width: 75%; margin-left: auto; margin-right: auto">
+                <tbody>
+                    <tr>
+                        <td>&nbsp; </td>
+                        <td>&nbsp; </td>
+                        <td>&nbsp; </td>
+                        <td>&nbsp; </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp; </td>
+                        <th scope="row">Ime:</th>
+                        <td><span id="ime">{{ user.ime }}</span> <input type="text" id="input-field-ime" style="display: none;" name="ime"></td>
+                        <td>&nbsp; </td>
+                    </tr>
+                                        <tr>
+                        <td>&nbsp; </td>
+                        <th scope="row">Prezime:</th>
+                        <td><span id="prezime">{{ user.prezime }}</span><input type="text" id="input-field-prezime" style="display: none;" name="prezime"></td>
+                        <td>&nbsp; </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp; </td>
+                        <th scope="row">Email:</th>
+                        <td><span id="email">{{ user.email }}</span><input type="text" id="input-field-email" style="display: none;"></td>
+                        <td>&nbsp; </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp; </td>
+                        <th scope="row">Šifra:</th>
+                        <td><span id="pass">Šifra je skrivena</span><input type="text" id="input-field-pass" style="display: none;"></td>
+                        <td>&nbsp; </td>
+                    </tr>
+                    {% if not user.is_superuser %}
+                    <tr>
+                        <td>&nbsp;</td>
+                        <th scope="row"></th>
+                        <td><button type="button" id="iddugmeodustani" class="btn btn-light" onclick="ponovoUcitajStranicu()" >Odustani</button> </td>
+                        <td> <button type="button" id="iddugmeizmeni" class="btn btn-light" >Izmeni podatke</button>
+                             <button type="submit" id="iddugmesacuvaj" class="btn btn-light" >Sacuvaj izmene</button>
+                        </td>
+
+                    </tr>
+                     {% endif %}
+                </tbody>
+            </table>
+            {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+            {% endif %}
+        </form>
+    </div>
+<style>
+    #iddugmeodustani, #iddugmesacuvaj {
+        display: none;
+    }
+       .messages {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+    .messages .error {
+        color: red;
+    }
+
+</style>
+   <script>
+  var dugmeizmeni = document.getElementById("iddugmeizmeni");
+  var dugmesacuvaj = document.getElementById("iddugmesacuvaj");
+  var dugmeodustani = document.getElementById("iddugmeodustani");
+
+  var imeSpan = document.getElementById("ime");
+  var preimeSpan = document.getElementById("prezime");
+  //var emailSpan = document.getElementById("email");
+  var passSpan = document.getElementById("pass");
+
+  var inputFieldIme = document.getElementById("input-field-ime");
+  var inputFieldPrezime = document.getElementById("input-field-prezime");
+  var inputFieldEmail = document.getElementById("input-field-");
+
+  dugmeizmeni.addEventListener("click", function() {
+    imeSpan.style.display = "none";
+    preimeSpan.style.display="none"
+    inputFieldIme.style.display = "block";
+    inputFieldPrezime.style.display = "block";
+    inputFieldIme.value = imeSpan.textContent;
+    inputFieldPrezime.value = preimeSpan.textContent;
+    passSpan.textContent="Promeni šifru";
+
+    dugmeizmeni.style.display="none";
+    dugmesacuvaj.style.display="block";
+    dugmeodustani.style.display="block";
+
+
+  });
+
+  function ponovoUcitajStranicu() {
+  location.reload();
+}
+
+</script>
+{% endblock %}

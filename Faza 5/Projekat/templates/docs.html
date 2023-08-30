@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground - Uputstvo</title>
+{% endblock %}
+{% block content %}
+    <div>
+        <div class="row">
+            <div class="col display-flex-center">
+                {% load static %}
+                <img src=" {% static 'StrategyPlayground/1.png' %}" style="width: 300px;">
+            </div>
+        </div>
+        <div class="row" style="margin: 30px">
+            <div class="col-12">
+                <h2 class="text-center">Uputstvo</h2>
+                <br><br>
+                <p>
+                    Strategy playground omogućava testiranje straterija za automatsku spekulativnu trgovinu.
+                </p>
+                <p>
+                    Za izvršavanje simulacije trgovanja, potrebne su dve stvari:
+                </p>
+                <ul>
+                    <li>Strategija</li>
+                    <li>Podaci o ceni</li>
+                </ul>
+                <p>
+                    Podaci o ceni predstavljaju listu pokreta cene nečeg od vrednosti u nekom vremenskom periodu. Ovo se dostavlja sistemu kroz .csv fajl koji sadrži tabelu pokreta. Svaki red u tabeli predstavlja jedan pokret i može biti okarakterisan na više načina. Svaki pokret treba da sadrži vreme kada se on desio u formatu DD.MM.YYYY HH:MM:SS.mmm (mmm su milisekunde). Ovda kolona treba da se nazove 'Gmt time'. Pored toga, Svaka druga kolona se može nazvati proizvoljno i po tom imenu čitati iz programskog koda. Za potrebe rada sa platformom možete koristiti svoje podatke sa karakterističnim kretanjima a realne istorijske podatke nabaviti
+                    <a href="https://www.dukascopy.com/plugins/fxMarketWatch/?historical_data">ovde.</a>
+                </p>
+                <p>
+                    Sistem nudi i mogućnost vizuelizacije podataka, pri čemu kolone trebaju da se nazovu na poseban način da bi bile prepoznate od strane podsistema za vizuelizaciju. Podržani modeli su:
+
+                </p>
+                <ul>
+                    <li>
+                        "Price": najjednostavniji model gde se cena reprezentuje jednom vrednosti
+                    </li>
+                    <li>
+                        "Bid", "Ask": model gde se kupovna i prodajna cena razlikuju (kako i jeste u realnosti)
+                    </li>
+                    <li>
+                        "Open", "High", "Low", "Close": Model gde se promene grupišu u celine gde se pamte ulazna, početna, najniža i krajnja cena u nekom vremenskom periodu
+                    </li>
+                </ul>
+                <p>
+                    Strategije se implementiraju kao posmatrači koji bivaju obavešteni o svakom pojedinačnom događaju promene iz izabranog skupa podataka (observer, publish-subscribe). Implemeniraju se u vidu klase koja se zove Strategy i koja implementira metodu process_tick() kojom reaguje na promene. Primer:
+                </p>
+                <pre>
+                    <code>
+            class Strategy:
+                def __init__(self):
+                    # Initialize internal state
+
+                def process_tick(self, tick, buy, sell):
+                    # Process change and make decisions
+                    </code>
+                </pre>
+                <p>
+                    Prosleđeni parametri:
+                </p>
+                <ul>
+                    <li>
+                        tick: rečnik koji predstavlja jednu promenu cene, pored polja 'Gmt time', moguće je putem ključeva pristupiti i drugim poljima
+                    </li>
+                    <li>
+                        buy, sell: procedure za otvaranje pozicija. primaju iste parametre:
+                        <ul>
+                            <li>
+                                entry_price: cena u trenutku otvaranja. mora biti jednaka tekućoj ceni.
+                            </li>
+                            <li>
+                                take_profit: granica u pravcu pozitivnog profita po kojoj se pozicija zatvara - <a href="https://www.babypips.com/forexpedia/take-profit">info</a>
+                            </li>
+                            <li>
+                                stop_loss: granica u pravcu negativnog profita po kojoj se pozicija zatvara - <a href="https://www.babypips.com/forexpedia/stop-loss-order">info</a>
+                            </li>
+                            <li>
+                                risk: relativni rizik
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    Kada se izvorni kod napiše i odaberu podaci za simuliranje, simulacija se može pokrenuti i njen status pratiti. Pored regularnog rada sa sopstevim podacima, sistem nudi i mogućnost nadmetanja sa drugim korisnicima putem rang lista. Rang liste predstacvljaju podatke o cenama koji nisu poznati korisnicima. Namenjeni su da podstaknu poboljšanje strategija putem isprobavanja ponašanja u nepoznatim okolnostima.
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

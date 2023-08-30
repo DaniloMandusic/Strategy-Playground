@@ -1,0 +1,623 @@
+PS C:\Dev\StrategyPlayground> git log
+commit a67d38eaabfba18263524609913c917b45079281 (HEAD -> nikola, origin/nikola)
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu May 11 06:22:24 2023 +0200
+
+    Ispravlja verziju projektnog zadatka sa 1.1.2 na 1.2
+
+commit 473d80adfc4ef4655b04f485bbf842b75c07f12b
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu May 11 06:21:48 2023 +0200
+
+    Prebacuje .gitignore iz implementacije u globalni i dodaje venv folder u njega
+
+commit 51491f86c6cb592ea1e1437636173f128cbed900
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu May 11 06:18:53 2023 +0200
+
+    Dodaje .gitignore za ignorisanje ms work lock fajlova
+
+commit ec9ebb5e8c66f807e22f449736f1e0ca76835feb
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu May 11 06:06:43 2023 +0200
+
+    Menja strukturu fajlova iz faza 4 i 5 da odgovara ostalima
+
+commit 2a0e2729d40ecc69ca375f55bdf22ee8e8a3949d
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu May 11 06:04:49 2023 +0200
+
+    Dodaje stare verzije SSU
+
+commit c36272e8caf8104f1804ff2b6c4acfb017d330f6
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu May 11 05:54:04 2023 +0200
+
+    Dodaje stare verzije prototipa
+
+commit 627149006c2edb8fba06233574f88043cc1c11bb
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu May 11 05:46:50 2023 +0200
+
+    Menja stukturu datoteka faze 2 da bi ranije verzije mogle da se uace
+
+commit 851c830736b764d2617eeb999b0f1389aa928503
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Wed May 10 19:41:17 2023 +0200
+
+    Dodaje starije verzije projektnog zadatka
+
+commit e4e2a02c2a746ffd486c886064bafd5bf09b1613
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Wed May 10 19:40:11 2023 +0200
+
+    Prebacuje projektni zadatak u zaseban direktorijum
+
+commit b362e9d9c4fbe6c288f39c338126a508dd395739
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Wed May 10 19:19:55 2023 +0200
+
+    Dodaje dokumenta iz faze formalne inspekcije
+
+commit a4ea44e79b6b9dd84dba9951bb913a763a022629
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Wed May 10 19:08:42 2023 +0200
+
+    Brise presotalu visak stranicu iz faze prototipa
+
+commit 8c0f376ead50ed99b975b882e0cca59f060c9606
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Wed May 10 19:06:58 2023 +0200
+
+    Dodaje naslove na HTML stranice
+
+commit 54f64a696f74464beb5c7d458c15f29867850e37
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Mon May 8 22:43:05 2023 +0200
+
+    Izbacuje fajlove iz dodatog .gitignore
+
+commit ada426a3212cf344dbdf6e7e3df38bb4bb9f896f
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Mon May 8 22:40:42 2023 +0200
+
+    Dodaje .gitignore sa .idea i __pycache__
+
+commit 343bb87250d81c496039ab76fa983ff000fb0b3c
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Mon May 8 22:34:55 2023 +0200
+
+    Izbacuje nepotrebne stilizacije
+
+commit 4df21e9febd8919057b00a27fdf8e6a1feced894
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Mon May 8 22:14:52 2023 +0200
+
+    Sredjuje HTML
+
+commit 2c5d08fb516252d71cfe41eb089e423e68db2132
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Mon May 8 21:44:49 2023 +0200
+
+    Sredjuje HTML
+
+commit 94c374a73a1e630cb45163e68187227da6eb3b03
+Author: Nikola Đokić <dn180128d@student.etf.bg.ac.rs>
+Date:   Mon May 8 18:40:49 2023 +0200
+
+    Brise nepotrebne duplikate css koda.
+
+commit 4d41db8bd788334eabb20b00e9f927723d24b04d (origin/master, origin/HEAD, master)
+Merge: e2cf3c7 091e0c6
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Mon May 8 22:37:01 2023 +0200
+
+    Merge pull request #23 from dn180128/implementacija_ana
+
+    Implementacija ana
+
+commit 091e0c6b95fb0ad96f5646092ba473a785e19dae (origin/implementacija_ana, implementacija_ana)
+Author: Ana Vranes <a.vranesss@gmail.com>
+Date:   Mon May 8 10:06:35 2023 +0200
+
+    1.1 frontend sve spojeno
+
+commit cc57d6060f7623174cb83d27f7b3b97137a505e9
+Author: Ana Vranes <a.vranesss@gmail.com>
+Date:   Wed Apr 26 16:33:22 2023 +0200
+
+    frontend 1.0
+
+commit e2cf3c76f5afc1c2f70f6790ccbc48f2a1e916cc
+Merge: 6dc038e 803e0a1
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Apr 20 21:45:15 2023 +0200
+
+    Merge pull request #22 from dn180128/nikola
+
+    Nikola
+
+commit 803e0a1108744ead3ff0075c5fcb10eaa2120dba
+Author: Nikola Đokić <dn181028d@student.etf.bg.ac.rs>
+Date:   Wed Apr 19 17:33:55 2023 +0200
+
+    Dodaje specifikaciju baze podataka
+
+commit b10cf4d3aaa538f6dd381b49b61770f57b111f63
+Author: Nikola Đokić <dn181028d@student.etf.bg.ac.rs>
+Date:   Wed Apr 19 12:43:26 2023 +0200
+
+    Izbacuje upload fajlova sa izvornim kodom
+
+commit c298b466553b7fceddea2b86227a57a18f1698e0
+Author: Nikola Đokić <dn181028d@student.etf.bg.ac.rs>
+Date:   Wed Apr 19 07:57:27 2023 +0200
+
+    Izbacivanje hijerarhije: Menja SSU i prototip
+
+commit c0843d7c6eff090277ef3952801d26c8a0067273
+Author: Nikola Đokić <dn181028d@student.etf.bg.ac.rs>
+Date:   Wed Apr 19 07:56:41 2023 +0200
+
+    Izbacivanje hijerarhije: menja projektni zadatak
+
+commit 6dc038e3683312ff4d5ac6b376354705e85214e2
+Merge: 9411882 dd80668
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Wed Apr 19 12:18:23 2023 +0200
+
+    Merge pull request #21 from dn180128/danilo-mandusic
+
+    Danilo mandusic
+
+commit dd80668d4da9f51c88ebef1b0dc41b4c793e98d0 (origin/danilo-mandusic)
+Merge: 414a0e5 f73d94e
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Wed Apr 19 10:54:27 2023 +0200
+
+    Merge branch 'master' into danilo-mandusic
+
+commit f73d94e4f87a104475e1e75633d560f88e83a07b
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Wed Apr 19 10:52:42 2023 +0200
+
+    dodat .erwin za model baze podataka
+
+commit 414a0e574e0bbfe3d36748a4aac2045247385624
+Merge: b27bc43 9411882
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Wed Apr 19 10:49:16 2023 +0200
+
+    Merge branch 'master' into danilo-mandusic
+
+commit b27bc43c84c5b983a31679de2a440aa78f308128
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Tue Apr 18 15:39:59 2023 +0200
+
+    dodat .erwin za model baze podataka
+
+commit 94118823adf121a0a7ca3d549ab8d36ca1bb5c69
+Merge: ba17418 a86d579
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Apr 13 23:40:04 2023 +0200
+
+    Merge pull request #19 from dn180128/nikola
+
+    Nikola
+
+commit a86d579147c6965b4491b01d8fb4eb9256c13192
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 23:38:33 2023 +0200
+
+    Remove redundant button from modal
+
+commit 773e9e1efef60ec248daee81729546754922e0d2
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 23:37:04 2023 +0200
+
+    Clean up leftovers from my bad repo management
+
+commit d83e6e738537fc45cd820f45f0febc2a1505b913
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 23:36:02 2023 +0200
+
+    Fix typos and grammar errors
+
+commit ba174185685f8e0f45697cfcfff93070adb0ba71
+Merge: 36dce44 1c2010b
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Apr 13 23:18:54 2023 +0200
+
+    Merge pull request #9 from dn180128/danilo-mandusic
+
+    Danilo mandusic
+
+commit 1c2010ba606ef8b4c3ef3470d6298b91a864ab1c
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 23:17:22 2023 +0200
+
+    Move Danilo's modified SSU to merged folder
+
+commit 19be6265a4759bbccf5aac733db2295b0840f50d
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 23:14:33 2023 +0200
+
+    Move changed HTML file to merged folder
+
+commit 1a723f9f52ca97a7b58bc372b35b17b7105e781c
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 23:12:29 2023 +0200
+
+    Fix edit popup
+
+commit 5543da3fceb14d25112628efb95f04549fa0f273
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 23:05:05 2023 +0200
+
+    Fix delete popup
+
+commit 946967f2fc230208f02817b6b6c2cff1833e0ac6
+Merge: d83e934 36dce44
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Apr 13 22:56:48 2023 +0200
+
+    Merge pull request #18 from dn180128/master
+
+    Merge master to danilo
+
+commit 36dce44e7a962a080e4bf51a295e13b1074d2ff6
+Merge: 18464c4 2d963b6
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Apr 13 22:54:03 2023 +0200
+
+    Merge pull request #17 from dn180128/nikola
+
+    Nikola
+
+commit 2d963b6f56be8a46457001e77291b887a517b2ae
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 22:49:37 2023 +0200
+
+    Remove references to username
+
+commit 08e1f7ffd3323f7e8cc54276fb22489642da79e6
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 22:43:39 2023 +0200
+
+    Add input field for lastname
+
+commit b52a6cc5b3926b63d5b4b3830a53ee6f009fd73f
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 22:39:46 2023 +0200
+
+    Add module delete warning popup
+
+commit 62a47d6fc6fca4768a0dc737fc66607c5853d63f
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Apr 13 22:07:01 2023 +0200
+
+    Move JS to separate folder
+
+commit 18464c4537ad88cbb3b1c10f0a83e6e6086696e7
+Merge: e9f68ea 633b1c8
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Apr 13 21:24:08 2023 +0200
+
+    Merge pull request #16 from dn180128/luka1
+
+    Luka1
+
+commit d83e934b7ad550d92f750e90f89977954b4cb7f8
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Thu Apr 13 18:40:13 2023 +0200
+
+    prototip i ssu ispravljeni i dodati u zajednicki folder
+
+commit 633b1c8e9c19cfad39292fbb3f2beeeebd5e938c (origin/luka1)
+Author: lukalazovic99 <luka.lazovic7@gmail.com>
+Date:   Thu Apr 13 06:39:25 2023 +0200
+
+    Ovaj comit vraca navbar u moje html-ove
+
+    vratio sam navbar, i linkove ka otvorenim strategijama
+
+commit 1ebd73feecbfd5f7ed9b4d7db9084f5dae304cea
+Merge: e888d7e 5a59389
+Author: lukalazovic99 <luka.lazovic7@gmail.com>
+Date:   Wed Apr 12 23:18:44 2023 +0200
+
+    Merge branch 'master' into luka1
+
+commit e888d7e3edf5d9cd24001d6baaea38db0b5348be
+Author: lukalazovic99 <luka.lazovic7@gmail.com>
+Date:   Wed Apr 12 23:15:44 2023 +0200
+
+    Azuriranje SSU dokumenta po napomenama iz FR-a
+
+    Obrisan dvoklik na strategiju u tacki 2.2.1
+
+commit 5a5938938f0daed799d95c283430a82a602538e3
+Merge: e9f68ea 067e286
+Author: lukalazovic99 <63362883+lukalazovic99@users.noreply.github.com>
+Date:   Wed Apr 12 23:02:54 2023 +0200
+
+    Merge pull request #10 from dn180128/luka1
+
+    merge luka1 into master
+
+commit 067e28624df8eea8df60a22151491d1cdeb1aa55
+Author: lukalazovic99 <luka.lazovic7@gmail.com>
+Date:   Wed Apr 12 22:56:36 2023 +0200
+
+    Azuriranje SSU dokumenata
+
+    Svi dugmici u SSU su promenjeni da imaju isti naziv kao u prototipu.
+
+commit 10ae0d6ff1999384c26bcdc3c3d74ae4e99b45cf
+Author: lukalazovic99 <63362883+lukalazovic99@users.noreply.github.com>
+Date:   Wed Apr 12 22:47:45 2023 +0200
+
+    Azuriranje SSU dokumenta
+
+commit 8093784a19dacb9c0043e183ade1a3475a4de560
+Author: lukalazovic99 <63362883+lukalazovic99@users.noreply.github.com>
+Date:   Wed Apr 12 22:46:36 2023 +0200
+
+    Delete SSU BrisanjePostojeceStrategije.docx
+
+commit 3e8e2976e3b25f906eac9706960e47454d9986a8
+Author: lukalazovic99 <luka.lazovic7@gmail.com>
+Date:   Wed Apr 12 22:28:13 2023 +0200
+
+    Ispravka zamerki prototipova iz FR-a
+
+    Dodat modal za brisanje strategija. Dodato brisanje strategije. Omoguceno dodavanje strategije.
+
+commit 4568dd5ddef7620fd457e914f91aaac4754ecbfb
+Merge: e9f68ea 1f77dbb
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Wed Apr 12 14:23:26 2023 +0200
+
+    Merge branch 'danilo-mandusic'
+
+commit 1f77dbb437686959c33dc8bcff44f63a15453200
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Sat Apr 8 23:07:03 2023 +0200
+
+    izmenjeni fajlovi nakon formalne inspekcije
+
+commit e9f68ea1948d6ef412aca3537ecf70d8ab0685d2
+Merge: 10c3512 d6dcf3a
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Mon Mar 27 06:31:37 2023 +0200
+
+    Merge pull request #8 from dn180128/nikola
+
+    Merge nikola to master
+
+commit d6dcf3a061b4b33d270aae3a3c26b5f3b4d406fb
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Fri Mar 24 00:03:43 2023 +0100
+
+    Add nav bar to connect with the rest
+
+commit 42587bcc005de4ca4adcfc24d6a2382e0e858553
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Fri Mar 24 00:03:25 2023 +0100
+
+    Add documentation page placeholder
+
+commit 44e6869353c999c9015d12d9ccaafb2f159c27a3
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Fri Mar 24 00:03:10 2023 +0100
+
+    Add image for documentation
+
+commit 00bf6e465c904ac1901707fffb62d69199a505dd
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:50:01 2023 +0100
+
+    Add navigation bar to pages
+
+commit f7a81c7933d14675403be3dbafc187fe9624443b
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:49:50 2023 +0100
+
+    Reduce padding on main class
+
+commit d7f1edbb711b101759c56121144dd64b3c02af63
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:48:06 2023 +0100
+
+    Link up market data page
+
+commit 61e9699c1c08c8a8b0a64d9b0bfc1186a9af21a2
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:47:21 2023 +0100
+
+    Update to reduce padding
+
+commit bbcd29f0f3c94a0e580bc26f9ccedf5368ab8a34
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:46:05 2023 +0100
+
+    Link up strategy viewer page
+
+commit 27294ee27c941d329169c4fb74ccdc3004f98880
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:33:46 2023 +0100
+
+    Reduce main card padding
+
+commit 82a12b39e611852a49f2353ec184d8e689339b60
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:32:54 2023 +0100
+
+    Add basic navbar
+
+commit 403491c6a368f047fdf310cb3c176c06927f6c07
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:28:42 2023 +0100
+
+    Add login to strategy link
+
+commit b35e57f7fe5fa3ce8461ffa89d9d58e3c928600b
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:16:15 2023 +0100
+
+    Add all prototype parts to single folder
+
+commit ac7c65c255a7ebff10f929c8799303501ccdfbc1
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:14:53 2023 +0100
+
+    Add all SSU to one folder
+
+commit 84bf44961f21a96ce5320567667f9f79c26477c5
+Merge: d9a8685 10c3512
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Fri Mar 24 00:04:30 2023 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 10c3512ccb1c6ae353fbb8f1ebe41513751ccf85
+Merge: 71c8748 858aa5f
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Mar 23 23:11:39 2023 +0100
+
+    Merge pull request #7 from dn180128/nikola
+
+    Add SSU+PR
+
+commit 858aa5f83f259d7ff31ba2d109121038a8d7c453
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:11:06 2023 +0100
+
+    Add SSU+PR
+
+commit d9a86859fe22f73f8e2a79781a536faa0290088b
+Merge: 0514cd1 71c8748
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:07:41 2023 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 71c8748164d325ea242145f20c60ebeba3d9ac9b
+Merge: a6dfe4e 4461deb
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Mar 23 23:06:44 2023 +0100
+
+    Merge pull request #6 from dn180128/ana_branch
+
+    Ana branch
+
+commit 4461deb194ed0a82472019141ee475979cef0579 (origin/ana_branch)
+Merge: 5d2323e a6dfe4e
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Mar 23 23:05:01 2023 +0100
+
+    Merge pull request #5 from dn180128/master
+
+    Merge ana_branch to master
+
+commit 0514cd13b8dd033f5c62ffc9f189b469ed89273f
+Merge: cfd9513 a6dfe4e
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:02:00 2023 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit cfd95137bd61ee3514905d28e55c8ca7135ede0e
+Merge: c615ebb 5d2323e
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Thu Mar 23 23:01:35 2023 +0100
+
+    Merge remote-tracking branch 'origin/ana_branch'
+
+commit a6dfe4e34ff353b0688bf6010e5298ad59caf42f
+Merge: c615ebb e891c45
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Mar 23 21:41:42 2023 +0100
+
+    Merge pull request #4 from dn180128/lukalazovic99-patch-1
+
+    Add files via upload
+
+commit e891c457d78c6924dd125b63145311fc66f1e298
+Author: lukalazovic99 <63362883+lukalazovic99@users.noreply.github.com>
+Date:   Thu Mar 23 21:11:27 2023 +0100
+
+    Add files via upload
+
+commit c615ebbada51ffd645f1625d1ca71ad65a0156fa
+Merge: a49dc1b 4811640
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Thu Mar 23 18:42:43 2023 +0100
+
+    Merge pull request #3 from dn180128/danilo-mandusic
+
+    md190607 dodati ssu i prototip
+
+commit 5d2323e5419ae385538120663237c27da3951a3d
+Author: Ana Vranes <a.vranesss@gmail.com>
+Date:   Thu Mar 23 15:44:51 2023 +0100
+
+    prototip
+
+commit 64772c8c98546c4d7bc22a3624d517251c1b83a7
+Author: Ana Vranes <a.vranesss@gmail.com>
+Date:   Thu Mar 23 11:54:02 2023 +0100
+
+    Projektni zadatak verzija 1.1
+
+commit 91526b5dc16c6bcde66e445415498c9650505793
+Author: Ana Vranes <a.vranesss@gmail.com>
+Date:   Thu Mar 23 11:41:30 2023 +0100
+
+    SSU fajlovi
+
+commit 48116406974a3b566a146ba3db6f3ca6b71fb2f5
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Thu Mar 23 11:13:04 2023 +0100
+
+    dodati komentari sa imenom na pocetku fajlova
+
+commit 5c269838450d3961a62033e898267d76ccfd89b3
+Author: danilo <danilo.mandusic1@gmail.com>
+Date:   Wed Mar 22 20:44:39 2023 +0100
+
+    md190607 dodati ssu i prototip
+
+commit 7be0f6de86fd299afd2e96ab5925dfd2a86b96c6
+Author: Ana Vranes <a.vranesss@gmail.com>
+Date:   Wed Mar 22 20:36:23 2023 +0100
+
+    test
+
+commit a49dc1b8d587b58f98814b43b5a2ac68306b9443
+Merge: 6aeb65e b97afc9
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Sat Mar 18 17:32:31 2023 +0100
+
+    Merge pull request #1 from dn180128/nikola
+
+    Dodavanje projektnog zadatka
+
+commit b97afc9dde1c4e98eeb4e8b0ad160f311b484cf5
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Sat Mar 18 17:28:31 2023 +0100
+
+    Dodaje projektni zadatak
+
+commit 6aeb65eb5cfb94a69b1e40174711c608ff933372
+Author: dn180128 <128225918+dn180128@users.noreply.github.com>
+Date:   Sat Mar 18 15:26:01 2023 +0100
+
+    Update LICENSE.md
+
+commit 22069e0cff8beafede4ded670a6c4f8731a36093
+Author: Nikola Djokic <dn180128d@student.etf.bg.ac.rs>
+Date:   Sat Mar 18 15:21:20 2023 +0100
+
+    Initial commit
+(END)

@@ -1,0 +1,145 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground - Simulacije</title>
+{% endblock %}
+{% block content %}
+
+<link rel="stylesheet"  href="{% static 'css/style_n.css' %}"/>
+
+<div style="width: 100%">
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="new-tab" data-bs-toggle="tab" data-bs-target="#new-sim" type="button" role="tab" aria-controls="new-sim" aria-selected="true">Pokreni novu simulaciju</button>
+        </li>
+        {% if simulacije %}
+            {% for simulacija in simulacije %}
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sim{{ simulacija.id }}" type="button" role="tab" aria-selected="false">
+                      {{ simulacija.ime }}
+                  </button>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+    <div class="tab-content" id="myTabContent" style="width: 100%">
+        <div class="tab-pane fade report show active" id="new-sim" role="tabpanel" aria-labelledby="new-tab">
+            <br><br>
+            <form method="POST">
+                {% csrf_token %}
+                <table class="form-table">
+                    {{ forma.as_table }}
+                    <tr>
+                        <td colspan="2">
+                            <br>
+                            <input type="submit" class="btn btn-primary btn-lg" value="Pokreni">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            {% if error %}
+                <br>
+                <div class="alert alert-danger">
+                    <strong>GREŠKA!</strong>
+                    {{ error }}
+                </div>
+            {% elif success %}
+                <br>
+                <div class="alert alert-success">
+                    <strong>USPEH!</strong>
+                    Simulacija je pokrenuta
+                </div>
+            {% endif %}
+            <br><br>
+        </div>
+        {% if simulacije %}
+            {% for simulacija in simulacije %}
+                <div class="tab-pane fade report" id="sim{{ simulacija.id }}" role="tabpanel" aria-labelledby="sim{{ simulacija.id }}-tab">
+                    <br>
+                    <br>
+                    {% if simulacija.status == 'pending' %}
+                        <div class="spinner-border loader" style="width: 4rem; height: 4rem;" role="status"></div>
+                        <br>
+                        <div class="text-muted">Simulacija je u toku. Molimo da sačekate...</div>
+                    {% elif simulacija.status == 'failure' %}
+                        <div class="alert alert-danger">
+                            <strong>GREŠKA!</strong>
+                            Poruka:
+                            <br>
+                            <pre>{{ simulacija.msg }}</pre>
+                        </div>
+                    {% elif simulacija.status == 'success' %}
+                        <div class="alert alert-success">
+                            <strong>KRAJ!</strong>
+                            Simulacija je završena
+                        </div>
+                        <div class="row">
+                            <div class="col h4">
+                                Učinak: {{ simulacija.score }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h5>Pozicije:</h5>
+                                <ul>
+                                    {% for pozicija in simulacija.closed_pos %}
+                                        <li>
+                                            {{ pozicija }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h6>Nezatvorene pozicije:</h6>
+                                {% if not simulacija.open_pos %}
+                                    Prazno
+                                {% endif %}
+                                <ul>
+                                    {% for pozicija in simulacija.open_pos %}
+                                        <li>
+                                            {{ pozicija }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% else %}
+                        Nevalidna simulacija. Ovo ne bi trebalo da se vidi
+                    {% endif %}
+                    <br>
+                    <br>
+                    <form method="POST" action="{% url 'delete-sim' %}">
+                        {% csrf_token %}
+                        <button class="btn btn-secondary" type="submit" name="id" value="{{ simulacija.id }}">
+                            Obriši
+                        </button>
+                    </form>
+                    <br>
+                    <br>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    document.getElementById("id_rang_liste").parentNode.parentNode.style.display = 'none';
+    document.getElementById("id_tipovi_podataka").addEventListener(
+        'change',
+        function() {
+            const value = document.getElementById("id_tipovi_podataka").value;
+            const moji_podaci = document.getElementById("id_moji_podaci").parentNode.parentNode;
+            const rang_liste = document.getElementById("id_rang_liste").parentNode.parentNode;
+            if (value === "Moji podaci") {
+                moji_podaci.style.display = 'table-row';
+                rang_liste.style.display = 'none';
+            } else if (value === "Rang liste") {
+                rang_liste.style.display = 'table-row';
+                moji_podaci.style.display = 'none';
+            }
+        })
+</script>
+
+{% endblock %}

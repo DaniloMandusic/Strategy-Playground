@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground - Rang Liste</title>
+{% endblock %}
+{% block content %}
+
+<link rel="stylesheet"  href="{% static 'css/style_n.css' %}"/>
+
+<div style="width: 100%" class="d-flex align-items-start flex-column justify-content-center align-items-center">
+    <div style="width: 70%">
+        <h2 class="text-center">Rang liste</h2>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-left" scope="col">Naziv</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rang_lista in rang_liste %}
+                <tr>
+                    <th scope="row">
+                        <a href="{% url 'rang_lista_single' id_rang_liste=rang_lista.id_rangliste %}">
+                            {{ rang_lista.naziv }}
+                        </a>
+                    </th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+
+    {% if user.is_superuser %}
+        <div style="width: 70%" class="report">
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h2 class="text-center">Dodaj novu rang listu:</h2>
+                        </td>
+                    </tr>
+                    {{ forma.as_table }}
+                    <tr>
+                        <td colspan="2">
+                            <br>
+                            <input style="width: 50%" type="submit" class="btn btn-success" value="Napravi">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <br>
+        {% if error %}
+            <br>
+            <div class="alert alert-danger">
+                <strong>GREŠKA!</strong>
+                {{ error }}
+            </div>
+            <br>
+        {% endif %}
+        <br>
+    {% endif %}
+
+</div>
+
+{% endblock %}

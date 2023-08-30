@@ -1,0 +1,161 @@
+<!-- Danilo Mandusic 19/607 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strategy Playground</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light shadow">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="../luka/pregled-strategija.html" class="nav-link">Strategije</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../danilo/prikaz-informacija.html" class="nav-link">Podaci o ceni</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../nikola/simulation.html" class="nav-link">Simulacije</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../nikola/docs.html" class="nav-link">Dokumentacija</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../ana/admin-prihvatanje.html" class="nav-link">Prihvatanje korisnika (ADMIN)</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../ana/adminRangLista1.html" class="nav-link">Dodavanje rang lista (ADMIN)</a>
+                </li>
+            </ul>
+            <div class="navbar-text ms-auto" id="userData" style="margin-right: 30px;">
+                Korisnik: 
+                <a href="../ana/mojprofil.html">Petar Petrović</a> 
+            </div>
+            <form class="form-inline">
+                <button formaction="../ana/login.html" class="btn btn-sm btn-outline-primary">Logout</button>
+            </form>
+        </div>
+    </nav>
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 display-flex-center">
+                        <img src="images/grafik.png">
+                    </div>
+                    <div class="col-lg-6 display-flex-center" >
+                        <img src="images/1.png" style="width: 300px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 display-flex-center">
+                        <div class="form-group py-5">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">File name</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>fajl1.csv</td>
+                                    <td></td>
+                                    <td><button type="button" class="btn btn-sm btn-secondary edit">Izmeni</button>
+                                        <button type="button" class="btn btn-sm btn-danger delete">Izbrisi</button>
+                                        <button type="button" class="btn btn-sm btn-success">Nacrtaj</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>fajl2.csv</td>
+                                    <td></td>
+                                    <td><button type="button" class="btn btn-sm btn-secondary edit">Izmeni</button>
+                                        <button type="button" class="btn btn-sm btn-danger delete">Izbrisi</button>
+                                        <button type="button" class="btn btn-sm btn-success">Nacrtaj</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>fajl3.csv</td>
+                                    <td></td>
+                                    <td><button type="button" class="btn btn-sm btn-secondary edit">Izmeni</button>
+                                        <button type="button" class="btn btn-sm btn-danger delete">Izbrisi</button>
+                                        <button type="button" class="btn btn-sm btn-success">Nacrtaj</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 display-flex-center">
+                        <button type="button" class="btn btn-success">Upload</button>
+                    </div>
+                </div>
+
+                <div id="myModal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Da li ste sigurni da zelite da obrisete fajl?</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Obrisi</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ponisti</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="myModal1" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Izmena fajla</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>1.0,2.0,2.2,2.5,2.7,2.2,1.8</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Sacuvaj</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ponisti</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- JS -->
+    <script>
+        $(document).ready(function () {
+            $('.edit').on('click', function () {
+                $('#myModal1').show();
+            })
+        })
+
+        $(document).ready(function () {
+            $('.delete').on('click', function () {
+                $('#myModal').show();
+            })
+        })
+    </script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

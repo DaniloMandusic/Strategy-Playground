@@ -1,0 +1,10 @@
+Ovde stoje sve verzije prototipa.
+Nije svaka verzija dovela do izmene u svakom SSU dokumentu vec postoje SSU 
+koji su ostali isti.
+
+Izmene:
+v1.0 - Inicijalna verzija
+v1.1 - Popravke defekata uocenih u formalnoj inspekciji od 
+	strane tima Web Wizards
+v1.2 - Promena statusa funkcionalnosti hijerarhijske strukture 
+	strategija u otvoreno pitanje

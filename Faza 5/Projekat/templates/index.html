@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground</title>
+{% endblock %}
+{% block content %}
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <body>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <figure>
+                        <img src="{% static 'StrategyPlayground/version1.png' %}" alt="index" style="width: 170%">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+/* Nikola Đokić 2018/0128 */
+
+#editor {
+    min-height: 550px;
+}
+
+.signup-content {
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.tab-content {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-center {
+    line-height: 40px;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+}
+
+.positions {
+    text-align: left;
+    margin-left: 100px;
+}
+
+.report {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    left: 50%;
+}
+
+.alert {
+    display:inline-block;
+}
+
+label {
+    display: inline-block;
+    position: initial;
+    font-weight: initial;
+    margin-top: 25px;
+    margin-right: 10px;
+}
+
+th {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.form-table td {
+    width: 400px;
+}

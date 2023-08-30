@@ -1,0 +1,3 @@
+[submodule "Faza 5/Projekat/StrategyPlayground/static/ace-builds"]
+	path = Faza 5/Projekat/StrategyPlayground/static/ace-builds
+	url = https://github.com/ajaxorg/ace-builds.git

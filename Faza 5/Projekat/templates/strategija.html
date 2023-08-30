@@ -1,0 +1,102 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground - Otvorena Strategija</title>
+    <style>
+        .btn {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+<link rel="stylesheet"  href="{% static 'css/style_n.css' %}"/>
+
+<div class="register-form ace-container">
+    <div class="row">
+        <div class="col-8 h4 vertical-center" style="display: flex; align-items: center; flex-wrap: wrap; margin-left: 20px">
+            <div>
+                <small class="text-muted">
+                Strategija:
+            </small>
+            </div>
+            <div>{{ strategija }}</div>
+        </div>
+        <div class="col-3" style="display: flex; align-items: center">
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" id="code_hidden" name="code" value="{{ code }}">
+                <button type="submit" id="save-btn" class="btn
+                                                    {% if saved %}
+                                                        btn-success
+                                                    {% else %}
+                                                        btn-primary
+                                                    {% endif %}">
+                    {% if saved %}
+                        Sačuvano
+                    {% else %}
+                        Sačuvaj
+                    {% endif %}
+                </button>
+            </form>
+            <button type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal{{ strategija }}">
+                Obriši
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12 card shadow">
+            <div id="editor"><pre>{{ code }}</pre></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="deleteModal{{ strategija }}" class="modal">
+    <div class="modal-dialog" role="document">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Brisanje modula</h5>
+            </div>
+            <div class="modal-body">
+                Da li ste sigurni da želite da obrišete strategiju {{ strategija }}?
+            </div>
+            <div class="modal-footer">
+                <form method="post" action={% url 'delete-strat' %}>
+                    {% csrf_token %}
+                    <button type="submit"
+                            class="btn btn-danger"
+                            data-bs-dismiss="modal"
+                            name="id" value="{{ strategija.id_strat }}">
+                        Da
+                    </button>
+                </form>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ne</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src={% static 'ace-builds/src/ace.js' %}></script>
+<script>
+    const editor = ace.edit("editor");
+    // editor.setTheme("ace/theme/light");
+    editor.setOptions({
+        fontSize: "11pt"
+    })
+    editor.on('change', function() {
+        const code_hidden_input = document.querySelector('#code_hidden');
+        code_hidden_input.value = editor.getValue();
+        document.getElementById('save-btn').classList.remove('btn-success')
+        document.getElementById('save-btn').classList.add('btn-primary')
+        document.getElementById('save-btn').innerText = "Sačuvaj"
+    })
+    editor.session.setMode("ace/mode/python");
+</script>
+{% endblock %}

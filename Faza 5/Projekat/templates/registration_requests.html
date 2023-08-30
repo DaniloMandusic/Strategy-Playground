@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground - Admin</title>
+{% endblock %}
+{% block content %}
+    <div class="signup-form">
+        <h2 class="form-title">Zahtevi za nove korisnike</h2>
+        <form method="POST" class="register-form" id="register-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <ul class="list-group">
+                    {% for request in registration_requests %}
+                        <li class="list-group-item">{{ request.email }}
+                            <button type="submit" name="approve" value="{{ request.id }}" class="btn btn-success">Prihvati</button>
+                            <button type="submit" name="reject" value="{{ request.id }}" class="btn btn-danger">Odbij</button>
+                        </li>
+                    {% empty %}
+                        <li class="list-group-item">Nema zahteva za registraciju.</li>
+                    {% endfor %}
+                </ul>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+    <div class="signup-image">
+        <figure>{% load static %} <img src="{% static 'StrategyPlayground/1.png' %}" alt="sing up image"></figure>
+    </div>
+{% endblock %}

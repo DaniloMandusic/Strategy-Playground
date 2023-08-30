@@ -1,0 +1,110 @@
+/* Nikola Đokić 2018/0128 */
+
+.navbar {
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+}
+
+.tab-content {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    text-align: left;
+}
+
+.positions {
+    text-align: left;
+    margin-left: 100px;
+}
+
+.report {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    left: 50%;
+}
+
+.alert {
+    display:inline-block;
+}
+
+.files-container {
+    padding: 15px;
+}
+
+.tab-content {
+    height: 550px;
+}
+
+.sim-container {
+    padding: 15px;
+}
+
+.ide-container {
+    height: 550px;
+}
+
+body {
+    overflow: hidden;
+    background: #f8f8f8;
+}
+
+#editor {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 15px;
+}
+
+ul {
+    padding-left: 15px;
+}
+
+li.file-end {
+    list-style: none;
+}
+
+/* Set the list image as background image*/
+li.file-end::before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+
+    /* Height of the list image*/
+    height: 15px;
+
+    /* Width of the list image*/
+    width: 15px;
+    background-image: url("assets/file_document_icon.png");
+    background-size: 15px;
+}
+
+li.file {
+    list-style: none;
+}
+
+/* Set the list image as background image*/
+li.file::before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+
+    /* Height of the list image*/
+    height: 15px;
+
+    /* Width of the list image*/
+    width: 15px;
+    background-image: url("assets/folder_icon.png");
+    background-size: 15px;
+}

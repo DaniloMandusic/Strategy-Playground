@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Strategy Playground - Podaci o trzistu</title>
+{% endblock %}
+{% block content %}
+    <div style="width: 100%">
+        <div class="row">
+            {% if draw %}
+            <div class="col display-flex-center">
+                {% load static %}
+                <img src="{% static 'chart.png' %}" alt="My Chart">
+            </div>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col display-flex-center">
+                <div class="form-group py-5">
+
+
+                    {% block myList %}
+                        <h2 class="text-center">Podaci o cenama</h2>
+                        <br>
+                        <table class="table table-bordered" style="border-color: white; border-top-color: black; overflow-x: scroll">
+                            <tbody>
+                                {% for file, containings in filesAndContainings %}
+                                    <form id="formDraw" method="post" action="{% url 'prikaz_informacija' %}">
+                                        <tr style="display: flex; flex-direction: row; align-items: center; overflow: hidden">
+                                            <th scope="row" style="flex-grow: 4">
+                                                {{ file }}
+                                            </th>
+                                            <td style="align-self: flex-end">
+                                                <button id="izmeniButton" data-item="{{ containings }}"
+                                                    data-name="{{ file }}"
+                                                    type="button" class="btn btn-sm btn-secondary edit">Izmeni
+                                                </button>
+                                            </td>
+                                            <td style="align-self: flex-end">
+                                                <button type="button" data-name="{{ file }}"
+                                                        class="btn btn-sm btn-danger delete">
+                                                    Izbrisi
+                                                </button>
+                                            </td>
+                                            <td style="align-self: flex-end">
+                                                {% csrf_token %}
+                                                <button data-name="{{ file }}" class="btn btn-sm btn-success draw ">
+                                                    Nacrtaj
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                    {% endblock %}
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col display-flex-center">
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="csv_file" id="file_input" style="display: none;">
+                    <button type="button" id="upload_button" class="btn btn-success">Select CSV file</button>
+                    <button type="submit" class="btn btn-success">Upload</button>
+                </form>
+
+            </div>
+
+            <script>
+                document.getElementById('upload_button').addEventListener('click', function () {
+                    document.getElementById('file_input').click();
+                });
+            </script>
+
+        </div>
+        <div class="row">
+            <div class="col display-flex-center">
+                {% load static %}
+                <img src=" {% static 'StrategyPlayground/1.png' %}" style="width: 300px;">
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Da li ste sigurni da zelite da obrisete fajl?</h5>
+                </div>
+                <form method="post" action="{% url 'prikaz_informacija' %}">
+                    {% csrf_token %}
+                    <div class="modal-footer">
+                        <input type="hidden" id="imeFajlaZaBrisanje" name="imeFajlaZaBrisanje">
+                        <button type="submit" class="btn btn-primary">Obrisi</button>
+                        <button type="button" class="btn btn-secondary MyClose" data-dismiss="modal">Ponisti</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal1" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Izmena fajla</h5>
+                </div>
+                <form method="post" action="{% url 'prikaz_informacija' %}">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <input type="hidden" id="imeFajla" name="imeFajla">
+                        <input type="text" id="sadrzajInput" name="sadrzajInputString" class="form-control"
+                               placeholder="Enter text">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Sacuvaj</button>
+                        <button type="button" class="btn btn-secondary MyClose" data-dismiss="modal" aria-label="Close">
+                            Ponisti
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.draw');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const name = button.getAttribute('data-name');
+
+                const input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', 'imeFajlaZaCrtanje');
+                input.setAttribute('value', name);
+
+                const form = document.getElementById('formDraw');
+                form.appendChild(input);
+
+                form.submit();
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.edit').on('click', function () {
+                var item = $(this).data('item');
+                var name = $(this).data('name');
+                $("#imeFajla").val(name);
+                $("#sadrzajInput").val(item);
+                $('#myModal1').show();
+            })
+        })
+
+        $(document).ready(function () {
+            $('.MyClose').on('click', function () {
+                $('#myModal1').hide();
+                $('#myModal').hide();
+            })
+        })
+
+        $(document).ready(function () {
+            $('.delete').on('click', function () {
+                var name = $(this).data('name');
+                $("#imeFajlaZaBrisanje").val(name);
+                $('#myModal').show();
+            })
+        })
+
+        $(document).ready(function () {
+            $('.draw').on('click', function () {
+                var name = $(this).data('name');
+                $("#imeFajlaZaCrtanje").val(name);
+            })
+        })
+
+    </script>
+{% endblock %}

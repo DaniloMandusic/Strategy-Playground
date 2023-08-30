@@ -1,0 +1,4 @@
+PyCharm 2023.1
+Python interpreter 3.11
+Django 4.2.1
+Ace Code Editor 1.22.0 (uključen kao submodul u repo)
